@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back"
+    android:layout_margin="3dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:text="Team A"
+                android:textColor="#dedede"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="30dp"
+                />
+
+            <TextView
+                android:id="@+id/scoreA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:gravity="center"
+                android:textSize="75dp"
+                android:text="0"
+                />
+
+            <Button
+                style="@style/but1"
+                android:onClick="threePointerA"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="+3 Points"
+                android:textColor="#fff"
+                />
+
+            <Button
+                style="@style/but1"
+                android:onClick="twoPointerA"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="+2 Points"
+                android:textColor="#fff"
+                />
+            <Button
+                style="@style/but1"
+                android:onClick="freeThrowA"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Free Throw"
+                android:textColor="#fff"
+                />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="400dp"
+            android:background="#fff" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:textColor="#dedede"
+                android:text="Team B"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="30dp"
+                />
+
+            <TextView
+                android:id="@+id/scoreB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:gravity="center"
+                android:textSize="75dp"
+                android:text="0"
+                />
+
+            <Button
+                style="@style/but1"
+                android:onClick="threePointerB"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="+3 Points"
+                android:textColor="#fff"
+                />
+
+            <Button
+                style="@style/but1"
+                android:onClick="twoPointerB"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="+2 Points"
+                android:textColor="#fff"
+                />
+            <Button
+                style="@style/but1"
+                android:onClick="freeThrowB"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Free Throw"
+                android:textColor="#fff"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
