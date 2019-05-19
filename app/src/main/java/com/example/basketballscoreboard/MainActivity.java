@@ -1,29 +1,59 @@
 package com.example.basketballscoreboard;
 
 import android.app.AlertDialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.DialogInterface;
+import android.content.res.Resources;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.Animation;
 import android.widget.TextView;
+
+import com.tomer.fadingtextview.FadingTextView;
 
 public class MainActivity extends AppCompatActivity
 {
+    private static final String CHANNEL_ID = "1";
     TextView aScore, bScore;
+    FadingTextView fadingDispView;
     int scoreA=0, scoreB=0;
+    String[ ] labels;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Resources res = getResources();
+        labels = res.getStringArray( R.array.displayTeams ) ;
         aScore=findViewById(R.id.scoreA);
         bScore=findViewById(R.id.scoreB);
+        fadingDispView=findViewById(R.id.teamDisp);
+        createNotificationChannel();
+        fadingDispView.setTexts(labels);
+        fadingDispView.setTimeout(2500, FadingTextView.MILLISECONDS);
 
+    }
+
+    private void createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = getString(R.string.channel_name);
+            String description = getString(R.string.channel_description);
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
     }
 
     @Override
@@ -91,6 +121,11 @@ public class MainActivity extends AppCompatActivity
     {
         scoreB+=1;
         displayScoreB();
+    }
+
+    public void reset(View view)
+    {
+        onReset();
     }
 
     public void onReset()
