@@ -8,4 +8,11 @@
         app:showAsAction="always"
         />
 
+    <item
+        android:id="@+id/ShareSSt"
+        android:title="Share"
+        android:icon="@drawable/share"
+        app:showAsAction="always"
+        />
+
 </menu>

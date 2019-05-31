@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/back"
     android:layout_margin="3dp"
+    android:id="@+id/BBSB"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -146,17 +147,18 @@
         android:textColor="#fff"
         android:textSize="20dp"
         />
-    <com.tomer.fadingtextview.FadingTextView
-        android:id="@+id/teamDisp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Teams"
-        android:textColor="#fff"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        android:fontFamily="sans-serif-smallcaps"
-        android:gravity="center"
-        android:layout_marginTop="50dp"
-        />
+
+    <!--<com.tomer.fadingtextview.FadingTextView-->
+        <!--android:id="@+id/teamDisp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Teams"-->
+        <!--android:textColor="#fff"-->
+        <!--android:textSize="35sp"-->
+        <!--android:textStyle="bold"-->
+        <!--android:fontFamily="sans-serif-smallcaps"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_marginTop="50dp"-->
+        <!--/>-->
 
 </LinearLayout>
